@@ -39,6 +39,7 @@ def calculate_stats(points):
     stats={}
     if int_arr :
         stats['avg'] = sum(int_arr)/len(int_arr) 
+        stats['count'] = len(int_arr)
         int_arr.sort()
         stats[0] = int_arr[0]
         stats[100] = int_arr[-1]
@@ -50,6 +51,7 @@ def calculate_stats(points):
 
 def default_output(result,out):
     '''Takes the result and prints in a default way in output File'''
+    out.write("Count = %d"%result['count'])`
     out.write("Avg = %f\n"%result['avg'])
     for i in [0,50,90,95,99,99.9,99.99,100] :
         out.write("%.2f <= %d\n"%(i,result[i]))
@@ -71,4 +73,3 @@ def main():
 
 if __name__ =="__main__":
     main()
-     
