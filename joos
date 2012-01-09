@@ -51,7 +51,7 @@ def calculate_stats(points):
 
 def default_output(result,out):
     '''Takes the result and prints in a default way in output File'''
-    out.write("Count = %d"%result['count'])`
+    out.write("Count = %d\n" % result['count'])
     out.write("Avg = %f\n"%result['avg'])
     for i in [0,50,90,95,99,99.9,99.99,100] :
         out.write("%.2f <= %d\n"%(i,result[i]))
